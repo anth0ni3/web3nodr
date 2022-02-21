@@ -1,32 +1,42 @@
 [
   {
-    "id" : 1,
-    "title": "KeepKey",
-    "imagePath": "/lib/images/keep.png"
-  },
-  {
-    "id" : 2,
-    "title": "Ledger",
-    "imagePath": "/lib/images/ledger.png"
-  },
-  {
-    "id" : 3,
-    "title": "Trezor",
-    "imagePath": "/lib/images/trezor.png"
-  },
-  {
-    "id" : 4,
+    "id": 1,
     "title": "MetaMask",
     "imagePath": "/lib/images/metamask.png"
   },
   {
-    "id" : 5,
+    "id": 2,
     "title": "Trust",
     "imagePath": "/lib/images/trust.png"
   },
   {
-    "id" : 6,
+    "id": 3,
     "title": "Coinbase",
     "imagePath": "/lib/images/coinbase.svg"
+  },
+  {
+    "id": 4,
+    "title": "Blockchain",
+    "imagePath": "/lib/images/blockchain.png"
+  },
+  {
+    "id": 5,
+    "title": "imToken",
+    "imagePath": "/lib/images/imtoken.svg"
+  },
+  {
+    "id": 6,
+    "title": "Ledger",
+    "imagePath": "/lib/images/ledger.png"
+  },
+  {
+    "id": 7,
+    "title": "Trezor",
+    "imagePath": "/lib/images/trezor.png"
+  },
+  {
+    "id": 8,
+    "title": "KeepKey",
+    "imagePath": "/lib/images/keep.png"
   }
 ]

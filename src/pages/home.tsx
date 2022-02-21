@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, Suspense } from "react";
 import WalletItem from "../components/walletItem";
 import WalletModal from "../components/walletModal";
 import { WalletContext, ThemeContext } from "../store/context";
@@ -30,6 +30,7 @@ function Home({
         <div className="home__content">
           <h5 className="content__title">Select Wallet</h5>
           <div className="content__inner">
+            <Suspense fallback={<div>Loading...</div>}>
             {wallets &&
               wallets?.map((wallet: any) => (
                 <WalletItem
@@ -41,6 +42,7 @@ function Home({
                   }}
                 />
               ))}
+            </Suspense>
           </div>
           <div className="help">
             <span className="help__text">
